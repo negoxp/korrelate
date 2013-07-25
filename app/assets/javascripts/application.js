@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require custom-form
+//= require custom-form.radio
+//= require custom-form.checkbox
+//= require custom-form.select
+//= require jquery-tabs
+//= require jquery.fancybox
+//= require scripts
