@@ -23,6 +23,23 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
+group :test do
+	gem 'steak'
+	gem "factory_girl_rails"
+	gem 'guard-rspec'
+	gem 'guard-livereload'
+	gem 'guard-spork'
+	gem 'spork'
+	gem 'rb-fsevent', '~> 0.9'
+	gem 'shoulda'
+	gem 'database_cleaner'
+	gem 'debugger'
+	gem 'capybara-screenshot'
+end
+
+
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
