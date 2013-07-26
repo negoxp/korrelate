@@ -19,3 +19,4 @@
 //= require jquery-tabs
 //= require jquery.fancybox
 //= require scripts
+//= require home

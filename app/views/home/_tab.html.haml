@@ -3,9 +3,13 @@
     %ul.tabset
       - subtabs.each do |subtab, fields|
         %li
-          %a{:href => "#tab-#{tab_name}-#{subtab}"}= subtab
+          %a{:href => "#tab-#{tab_name}-#{subtab}", data_id: subtab }= subtab.to_s.titleize
       
     / / tabset
     - subtabs.each do |subtab, fields|
       %div{ id: "tab-#{tab_name}-#{subtab}" }
         = render 'content_holder', fields: fields
+        .coming-soon 
+          Your 
+          %span{ id: "data#{tab_name}-#{subtab}" }
+          Data.  Coming Soon...

@@ -2,7 +2,7 @@
   %ul.tabset
     - @tabs.each do |tab_name, subtabs|
       %li
-        %a{:href => "#tab-#{tab_name}"}= "#{tab_name}"
+        %a{:href => "#tab-#{tab_name}", data_id: tab_name}= "#{tab_name.to_s.titleize}"
     
   
   - @tabs.each do |tab_name, subtabs|
