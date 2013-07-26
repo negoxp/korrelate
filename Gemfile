@@ -34,7 +34,6 @@ group :test do
 	gem 'rb-fsevent', '~> 0.9'
 	gem 'shoulda'
 	gem 'database_cleaner'
-	gem 'debugger'
 	gem 'capybara-screenshot'
 end
 
