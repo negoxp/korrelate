@@ -1,0 +1,20 @@
+.holder
+  .report-form
+    %form{:action => "#"}
+      %fieldset
+
+        - fields.each do |name, field|
+
+          - if field[:input_type] == :checkbox
+            %label.first{:for => "lbl#{@unique_id}"}= name.to_s.humanize
+            %input{id: "lbl#{@unique_id}",:checked => field[:input_checked], :type => "checkbox"}/
+            - @unique_id += 1
+
+          - if field[:input_type] == :select
+            %select.attribute
+              - field[:input_options].each do |option_name|
+                %option= option_name
+            - @unique_id += 1
+    
+        %a.fancybox.btn{:href => "#box"} Adjust Report
+.coming-soon Your Data.  Coming Soon...
