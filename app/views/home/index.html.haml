@@ -1,9 +1,49 @@
 #tabs
   %ul.tabset
+    -#Build tab/header
     - @tabs.each do |tab_name, subtabs|
       %li
         %a{:href => "#tab-#{tab_name}", data_id: tab_name}= "#{tab_name.to_s.titleize}"
     
   
+  -#Build tab/content
   - @tabs.each do |tab_name, subtabs|
-    = render 'tab', tab_name: tab_name, subtabs: subtabs
+    %div{ id: "tab-#{tab_name}"}
+      .child-tabs
+        %ul.tabset
+          -#Build subtab/header
+          - subtabs.each do |subtab, fields|
+            %li
+              %a{:href => "#tab-#{tab_name}-#{subtab}", data_id: subtab }= subtab.to_s.titleize
+
+        -#Build subtab/content
+        - subtabs.each do |subtab, fields|
+          %div{ id: "tab-#{tab_name}-#{subtab}" }
+            .holder
+              .report-form
+                %form{:action => "#"}
+                  %fieldset
+
+                    -#Build selected fields for this subtab
+                    - fields.each do |name, field|
+
+                      - if field[:input_type] == :checkbox
+                        %label.first{:for => "lbl#{@unique_id}"}= name.to_s.humanize
+                        %input{id: "lbl#{@unique_id}",:checked => field[:input_checked], :type => "checkbox"}/
+                        - @unique_id += 1
+
+                      - if field[:input_type] == :select
+                        = render 'layouts/select_field', input_options: field[:input_options], clas: 'attribute'
+                        
+                      
+                      - if field[:show_icon]
+                        = image_tag 'ico-01.png',alt: "image", height: "16", width:  "17"
+                
+                    %a.fancybox.btn{:href => "#box"} Adjust Report
+
+
+
+            .coming-soon 
+              Your 
+              %span{ id: "data#{tab_name}-#{subtab}" }
+              Data.  Coming Soon...

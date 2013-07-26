@@ -16,21 +16,15 @@
                   %a{:href => "#"}
                     = image_tag "logo.png",alt: "image"
                 .cols
-                  %select
-                    %option Advertiser 1
-                    %option Advertiser 2
-                    %option Advertiser 3
-                  %select
-                    %option Agency 1
-                    %option Agency 2
-                    %option Agency 3
+
+                  = render 'layouts/select_field', input_options: ['Advertiser 1', 'Advertiser 2', 'Advertiser 3']
+                  = render 'layouts/select_field', input_options: ['Agency 1', 'Agency 2', 'Agency 3']
+
               .col
+
                 .select
-                  %select.name
-                    %option John User
-                    %option Preferences
-                    %option Help
-                    %option Log Out
+                  = render 'layouts/select_field', input_options: ['John User', 'Preferences', 'Help', 'Log Out'], clas: 'name'
+                  
                 %strong.logo.verity
                   %a{:href => "#"}
                     = image_tag 'logo-verity.png', alt: "image"

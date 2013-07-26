@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 
+  #ajax return function to show data content
   def comming
     render text: "#{params[:tab].titleize}-#{params[:subtab].titleize}"
   end
@@ -8,14 +9,17 @@ class HomeController < ApplicationController
 
   def index
 
+    #counter for unique labels
     @unique_id = 1
 
+
+    #definition of tabs, fields an options
     fields = { 
 
       advertiser:   { input_type: :checkbox, input_checked: :checked }, 
-      campaign:     { input_type: :checkbox, input_checked: :checked }, 
-      site:         { input_type: :checkbox, input_checked: false }, 
-      placement:    { input_type: :checkbox, input_checked: false }, 
+      campaign:     { input_type: :checkbox, input_checked: :checked, show_icon: true }, 
+      site:         { input_type: :checkbox, input_checked: false,    show_icon: true }, 
+      placement:    { input_type: :checkbox, input_checked: false,    show_icon: true }, 
       online:       { input_type: :select,  input_options: [ 'Online Attribute', 'Online Attribute', 'Online Attribute' ] }
     }
     
@@ -23,7 +27,7 @@ class HomeController < ApplicationController
 
       impressions:    fields,
       actions:        fields.deep_dup,
-      view_actions:    fields.deep_dup,
+      view_actions:   fields.deep_dup,
       engagements:    fields.deep_dup,
       clicks:         fields.deep_dup
     }
@@ -40,6 +44,8 @@ class HomeController < ApplicationController
 
     #Tab audience is diffrent
     @tabs[:audience][:impressions].delete(:online)
+    @tabs[:audience][:impressions][:site]           = { input_type: :checkbox, input_checked: true,    show_icon: true }
+    @tabs[:audience][:impressions][:placement]      = { input_type: :checkbox, input_checked: true,    show_icon: true }
     @tabs[:audience][:impressions][:optimization]   = { input_type: :select, input_options: ['Optimization Target', 'Optimization Target', 'Optimization Target' ] }
     @tabs[:audience][:impressions][:browser]        = { input_type: :select, input_options: ['Browser Atttibute', 'Browser Atttibute', 'Browser Atttibute' ] }
 
