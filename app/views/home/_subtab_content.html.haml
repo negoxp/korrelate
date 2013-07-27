@@ -11,7 +11,7 @@
             %input{id: "#{tab_name}-#{subtab}-#{index}",:checked => field[:input_checked], :type => "checkbox"}/
 
           - if field[:input_type] == :select
-            = render 'shared/select_field', input_options: field[:input_options], clas: 'attribute'
+            = render 'shared/select_field', name: name, input_options: field[:input_options], clas: 'attribute'
             
           
           - if field[:show_icon]
@@ -22,6 +22,6 @@
 
 
 .coming-soon 
-  Your 
+  = "Your "
   %span{ id: "data#{tab_name}-#{subtab}" }
-  Data.  Coming Soon...
+  = " Data.  Coming Soon..."

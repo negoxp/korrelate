@@ -4,19 +4,15 @@
       %fieldset
         .col
           %strong.logo
-            %a{:href => "#"}
-              = image_tag "logo.png",alt: "image"
+            = link_to (image_tag "logo.png",alt: "image"), '#'
+            
           .cols
-
             = render 'shared/select_field', input_options: ['Advertiser 1', 'Advertiser 2', 'Advertiser 3']
             = render 'shared/select_field', input_options: ['Agency 1', 'Agency 2', 'Agency 3']
 
         .col
-
           .select
             = render 'shared/select_field', input_options: ['John User', 'Preferences', 'Help', 'Log Out'], clas: 'name'
             
           %strong.logo.verity
-            %a{:href => "#"}
-              = image_tag 'logo-verity.png', alt: "image"
-/ / header
+            = link_to (image_tag 'logo-verity.png', alt: "image"), '#'

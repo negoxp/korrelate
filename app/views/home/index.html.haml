@@ -1,11 +1,11 @@
 #tabs
   %ul.tabset
     -#Build tab/header
+    -# render partial: 'custom_li', collection: TABS, as: :tab
     - TABS.each do |tab_name, subtabs|
-      %li
-        %a{:href => "#tab-#{tab_name}", data_id: tab_name}= "#{tab_name.to_s.titleize}"
+      = render 'custom_li', tab_name: tab_name, subtabs: subtabs
     
-  
+    
   -#Build tab/content
   - TABS.each do |tab_name, subtabs|
     = render 'subtab', tab_name: tab_name, subtabs: subtabs

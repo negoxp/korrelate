@@ -9,7 +9,7 @@ $ ->
     comming()
     
     
-comming = ()->
+comming = ->
   target = $('.ui-tabs-active:visible a')
   tab = target.first().attr('data_id')
   subtab = target.last().attr('data_id')
