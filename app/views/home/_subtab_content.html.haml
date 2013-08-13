@@ -8,7 +8,7 @@
 
           - if field[:input_type] == :checkbox
             %label.first{:for => "#{tab_name}-#{subtab}-#{index}"}= name.to_s.humanize
-            %input{id: "#{tab_name}-#{subtab}-#{index}",:checked => field[:input_checked], :name =>"fieldsarray#{tab_name}-#{subtab}[]", :type => "checkbox"}/
+            %input{id: "#{tab_name}-#{subtab}-#{index}", :value =>"#{name.to_s.humanize}" ,:checked => field[:input_checked], :name =>"fieldsarray#{tab_name}-#{subtab}[]", :type => "checkbox"}/
 
           - if field[:input_type] == :select
             = render 'shared/select_field', name: name, input_options: field[:input_options], clas: 'attribute'
@@ -18,7 +18,7 @@
             = image_tag 'ico-01.png',alt: "image", height: "16", width:  "17"
     
         %a.fancybox.btn{:href => "#box"} Adjust Windows 
-        %a.btn.submit Update Report 
+        %a.btn.submit{:href => "#"} Update Report 
         -#%input{:class => "btn", :type => "Submit"}
 
 
@@ -29,4 +29,6 @@
   %br
   %br
   %br
-  %span{ id: "controlls#{tab_name}-#{subtab}" } holas
+  = "["
+  %span{ id: "controlls#{tab_name}-#{subtab}" }
+  = "]"
