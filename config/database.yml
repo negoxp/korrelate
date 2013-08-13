@@ -32,7 +32,7 @@ development:
   pool: 5
   timeout: 5000
   username: postgres
-  password: 0000
+  password: master
   host: 127.0.0.1
   port: 5432
 
@@ -43,7 +43,7 @@ test:
   pool: 5
   timeout: 5000
   username: postgres
-  password: 0000
+  password: master
   host: 127.0.0.1
   port: 5432
 
