@@ -1,6 +1,7 @@
 Korrelate::Application.routes.draw do
   get "home/index"
   get "home/comming"
+  get "home/calculateadjustment"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -3,8 +3,6 @@ var monthselect = 8;
 var report = 1;
 var attribution = 3;
 var purchaseEvent = "Purchase"
-var monthNames = ["December", "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December", "January", "February" ];
 
 $(document).ready(function() {
 	$(function() {
@@ -65,32 +63,22 @@ $(document).ready(function() {
 });
 
 function updatetags(){
-	var yearselectedaux = yearselected;
-	var yearselectedaux2 = yearselected;
-	if (purchaseEvent=="Purchase"){
-		var auxmonth =monthselect + (report-1);
-		if (auxmonth>=13){yearselectedaux = yearselectedaux + 1; }
-		$('#purchase').text(monthNames[monthselect] + " " +yearselected + " through " + monthNames[auxmonth] + " " +yearselectedaux);
-		yearselectedaux = yearselected;
-		var auxmonth =monthselect - attribution;
-		if (auxmonth<=0){yearselectedaux = yearselectedaux - 1; }
-		var auxmonth2 =monthselect + (report-1);
-		if (auxmonth2>=13){yearselectedaux2 = yearselectedaux2 + 1; }
-		$('#impressions').text(monthNames[auxmonth] + " " +yearselectedaux + " through " + monthNames[auxmonth2] + " " +yearselectedaux2);
-	}else{
-		yearselectedaux = yearselected;
-		//Purchases == (Start Month) through (Start Month + (Attribution Window -1 ))
-		var auxmonth =monthselect + (attribution-1);
-		if (auxmonth>=13){yearselectedaux = yearselectedaux + 1; }
-		$('#purchase').text(monthNames[monthselect] + " " +yearselected + " through " + monthNames[auxmonth] + " " +yearselectedaux);
-		//Impressions == (Start Month) through (Start Month + (Report Window – 1))
-		yearselectedaux = yearselected;
-		var auxmonth2 =monthselect + (report-1);
-		if (auxmonth2>=13){yearselectedaux = yearselectedaux + 1; }
-		$('#impressions').text(monthNames[monthselect] + " " +yearselected + " through " + monthNames[auxmonth2] + " " +yearselectedaux);
-	}
-
-	$('#focusonpurchase').text(purchaseEvent + " Month");
+	var parameters = "?";
+	parameters += "yearSelected="+yearselected+"&";
+	parameters += "monthSelected="+monthselect+"&";
+	parameters += "purchaseEvent="+purchaseEvent+"&";
+	parameters += "attribution="+attribution+"&";
+	parameters += "report="+report+"&";
+	$.ajax({
+		type: 'get',
+		url: '/home/calculateadjustment' + parameters,
+		dataType: 'html',
+		success: function (response) {
+			$('#result').html(response)
+			//$('.modal-body').text(json.description)
+			//$('#imageshowlarge').attr('src', largephoto)
+		}
+	});
 }
 
 
@@ -100,8 +88,6 @@ function monthReturn(y,m) {
   	monthselect = m;
   	$("#monthselect"+yearselected+monthselect).addClass('activemonth');
   	updatetags();
-    //$("#month").value=m+"/"+y;
-    //alert(m);
 }
 
 
