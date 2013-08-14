@@ -17,6 +17,10 @@ feature 'Content', %q{
 	  			find '[value=Campaign]'
 	  			find '[value=Site]'
 	  			find '[value=Placement]'
+	  			page.should have_content('Advertiser')
+	  			page.should have_content('Campaign')
+	  			page.should have_content('Site')
+	  			page.should have_content('Placement')
 	  		end
 	  	end	
 	end
@@ -31,6 +35,8 @@ feature 'Content', %q{
 	  		within('#tab-dashboard-actions') do
 	  			find '[value=Advertiser]'
 	  			find '[value=Pixel]'
+	  			page.should have_content('Advertiser')
+	  			page.should have_content('Pixel')
 	  		end
 	  	end	
 	end
@@ -44,6 +50,7 @@ feature 'Content', %q{
 	  		find('.view_actions').click
 	  		within('#tab-dashboard-view_actions') do
 	  			find '[value=Advertiser]'
+	  			page.should have_content('Advertiser')
 	  		end
 	  	end	
 	end
@@ -59,6 +66,10 @@ feature 'Content', %q{
 	  			find '[value=Campaign]'
 	  			find '[value=Site]'
 	  			find '[value=Placement]'
+	  			page.should have_content('Advertiser')
+	  			page.should have_content('Campaign')
+	  			page.should have_content('Site')
+	  			page.should have_content('Placement')
 	  		end
 	  	end	
 	end
@@ -74,7 +85,30 @@ feature 'Content', %q{
 	  			find '[value=Campaign]'
 	  			find '[value=Site]'
 	  			find '[value=Placement]'
+	  			page.should have_content('Advertiser')
+	  			page.should have_content('Campaign')
+	  			page.should have_content('Site')
+	  			page.should have_content('Placement')
 	  		end
+	  	end	
+	end
+
+
+
+	scenario 'Check modal view', :js=>true do
+		visit "/"
+	  	click_link 'Dashboard'
+	  	sleep 1
+	  	within('#tab-dashboard') do
+	  		click_link 'Impressions'
+	  		within('#tab-dashboard-impressions') do
+	  			click_link 'Adjust Windows'
+	  		end
+	  	end
+	  	within('#box') do
+	  		page.should have_content('START MONTH')
+	  		page.should have_content('ATTRIBUTION WINDOW')
+	  		page.should have_content('RESULT')
 	  	end	
 	end
 
