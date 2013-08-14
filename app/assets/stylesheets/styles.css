@@ -513,12 +513,42 @@ select:focus {
 }
 
 #calendarpick table td{
-  height: 30px;
+  height: auto;
   border: none;
+  padding: 5px;
 } 
 
+#calendarmonthid table td{
+  height: auto;
+  border: none;
+  padding: 5px;
+}
 
+#calendarmonthid td:hover{
+  background-color: #aaa;
+  color: #FFF;
+}
 
+#calendarmonthid td:hover a{
+  color: #FFF;
+}
+
+.activemonth{
+  background-color: #aaa;
+  color: #FFF;
+}
+
+.activemonth a{
+  color: #FFF;
+}
+
+#result{
+  width:200px;
+}
+
+#controllsdashboard-impressions{
+  font-size: 30px;
+}
 
 
 

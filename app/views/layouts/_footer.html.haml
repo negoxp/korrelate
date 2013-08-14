@@ -6,16 +6,16 @@
     %form{:action => "#"}
       %fieldset
         .heading
-          %input#lbl1{:checked => "checked", :name => "name01", :type => "radio"}/
+          %input#lbl1{:checked => "checked", :class => "purchaseEvent", :name => "purchaseEvent", :type => "radio", :value => 'Purchase'}/
           %label{:for => "lbl1"} Purchase Month
-          %input#lbl2{:name => "name01", :type => "radio"}/
+          %input#lbl2{:name => "purchaseEvent", :class => "purchaseEvent", :type => "radio", :value => 'Event'}/
           %label{:for => "lbl2"} Event Month
         / / heading
         .cols
           .col
             %h3 start month
             #calendarpick
-            -#%input#month{:name => "month", :type => "text"}
+            -# => %input#month{:name => "month", :type => "text"}
 
           .col
             %h3.center attribution window
@@ -32,55 +32,56 @@
                     = image_tag 'bg-text-01.png', alt: "image", height: "46", width: '33'
                   %td.col02
                     .radio-area
-                      %input{:name => "name02", :type => "radio"}/
+                      %input{:name => "reportattribution", :class => "reportattribution", :report => "1", :attribution => "1", :type => "radio"}/
                   %td.col03
                     .radio-area
-                      %input{:name => "name02", :type => "radio"}/
+                      %input{:name => "reportattribution", :class => "reportattribution", :report => "1", :attribution => "2", :type => "radio"}/
                   %td.col04
                     .radio-area
-                      %input{:checked => "checked", :name => "name02", :type => "radio"}/
+                      %input{:checked => "checked", :class => "reportattribution",  :report => "1", :attribution => "3", :name => "reportattribution", :type => "radio"}/
                 %tr
                   %td.col01
 
                     = image_tag 'bg-text-02.png',alt: "image", height:  "46", width:  "33"
                   %td.col02
                     .radio-area
-                      %input{:name => "name02", :type => "radio"}/
+                      %input{:name => "reportattribution", :class => "reportattribution",  :report => "2", :attribution => "1", :type => "radio"}/
                   %td.col03
                     .radio-area
-                      %input{:name => "name02", :type => "radio"}/
+                      %input{:name => "reportattribution", :class => "reportattribution",  :report => "2", :attribution => "2", :type => "radio"}/
                   %td.col04
                     .radio-area
-                      %input{:name => "name02", :type => "radio"}/
+                      %input{:name => "reportattribution", :class => "reportattribution",  :report => "2", :attribution => "3", :type => "radio"}/
                 %tr
                   %td.col01
                     = image_tag 'bg-text-03.png', alt: "image", height: "46", width: "33"
                   %td.col02
                     .radio-area
-                      %input{:name => "name02", :type => "radio"}/
+                      %input{:name => "reportattribution", :class => "reportattribution",  :report => "3", :attribution => "1", :type => "radio"}/
                   %td.col03
                     .radio-area
-                      %input{:name => "name02", :type => "radio"}/
+                      %input{:name => "reportattribution", :class => "reportattribution",  :report => "3", :attribution => "2", :type => "radio"}/
                   %td.col04
                     .radio-area
-                      %input{:name => "name02", :type => "radio"}/
+                      %input{:name => "reportattribution", :class => "reportattribution",  :report => "3", :attribution => "3", :type => "radio"}/
             / / table
           / / col
-          .col
+          .col{:width => '100%'}
             %h3 Result
-            .result
-              %ul
-                %li.color-01 APR
-                %li.color-02 may
-                %li.color-03 jun
-              %ul.level-02
-                %li.color-01 APR
-                %li.color-02 may
-                %li.color-03 jun
-              %ul.level-03
-                %li.color-01 APR
-                %li.color-02 may
-                %li.color-03 jun
+            #result.result{:align => 'center'}
+              %strong Purchase:
+              %br
+              #purchase April 2012
+              %br
+              %br
+              %strong Impressions:
+              %br
+              #impressions Feb 2012 - Apr 2012
+              %br
+              %br
+              %strong Focus On:
+              %br
+              #focusonpurchase Purchase Month
           / / col
         / / cols
   / / choice-form
