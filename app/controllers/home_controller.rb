@@ -7,36 +7,13 @@ class HomeController < ApplicationController
   end
 
   def index
-    require 'calculate_adjustment'
-    calc=CalculateAdjustment.new :type=> :event , :year => 2013, :month => 8, :attribution => 4 , :report => 2
-    @purchase, @impressions=calc.get_data
 
   end
 
   def calculateadjustment
-  	
-  	@purchaseEvent=params[:purchaseEvent]
-  	startMonth=Time.new(params[:yearSelected], params[:monthSelected], "01")
-
-  	if @purchaseEvent== "Purchase"	
-  		#Purchases == (Start Month) through (Start Month + (Report Window – 1))
-  		monthend = startMonth + (params[:report].to_i - 1).months
-		@purchases = startMonth.strftime("%B %Y") +" through " + monthend.strftime("%B %Y")
-		
-		#Impressions == (Start Month – Attribution Window) through (Start Month + (Report Window -1 ))
-		monthbegin = startMonth - (params[:attribution].to_i).months
-		monthend = 	startMonth + (params[:report].to_i - 1).months
-		@impressions = monthbegin.strftime("%B %Y") +" through " + monthend.strftime("%B %Y")
-  	else
-  		#Purchases == (Start Month) through (Start Month + (Attribution Window -1 ))
-  		monthend = startMonth + (params[:attribution].to_i - 1).months
-		@purchases = startMonth.strftime("%B %Y") +" through " + monthend.strftime("%B %Y")
-		 
-  		#Impressions == (Start Month) through (Start Month + (Report Window – 1))
-  		monthend = startMonth + (params[:report].to_i - 1).months
-		@impressions = startMonth.strftime("%B %Y") + " through " + monthend.strftime("%B %Y")
-  	end
-
+  	require 'calculate_adjustment'
+    calc=CalculateAdjustment.new :type=> params[:purchaseEvent] , :year => params[:yearSelected], :month => params[:monthSelected], :attribution => params[:attribution] , :report => params[:report]
+    @purchases, @impressions =calc.get_data
   	render :layout => false
   end	
 

@@ -75,10 +75,9 @@ function updatetags(){
 		dataType: 'html',
 		success: function (response) {
 			$('#result').html(response)
-			//$('.modal-body').text(json.description)
-			//$('#imageshowlarge').attr('src', largephoto)
 		}
 	});
+	$('#focusonpurchase').text(purchaseEvent + " Month");
 }
 
 
