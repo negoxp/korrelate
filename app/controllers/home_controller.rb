@@ -7,6 +7,10 @@ class HomeController < ApplicationController
   end
 
   def index
+    require 'calculate_adjustment'
+    calc=CalculateAdjustment.new :type=> :event , :year => 2013, :month => 8, :attribution => 4 , :report => 2
+    @purchase, @impressions=calc.get_data
+
   end
 
   def calculateadjustment
