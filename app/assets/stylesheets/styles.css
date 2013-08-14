@@ -16,7 +16,7 @@ html {
 body {
   margin: 0;
   color: #333;
-  font: 15px/18px Arial, Helvetica, sans-serif;
+  font: 14px/18px Arial, Helvetica, sans-serif;
   min-width: 1000px;
   height: 100%; }
 
@@ -162,7 +162,7 @@ select:focus {
 
 .report-form {
   overflow: hidden;
-  padding: 0 23px 26px; }
+  padding: 0 3px 26px; }
   .report-form label {
     float: left;
     padding: 13px 8px 0 0; }
@@ -170,7 +170,10 @@ select:focus {
       padding-right: 11px; }
   .report-form img {
     float: left;
-    margin: 13px 2.8% 0px -3.1%; }
+    /*margin: 13px 2.8% 0px -3.1%; */
+    margin-top: 13px;
+    margin-left: -26px;
+  }
   .report-form select {
     width: 12.3%;
     text-overflow: ellipsis;
@@ -178,13 +181,13 @@ select:focus {
     overflow: hidden; }
   .report-form .btn {
     float: left;
-    width: 165px;
+    width: 120px;
     background: url(/assets/bg-btn.png) repeat-x;
     border: 0;
     padding: 0;
     height: 40px;
     color: #fff;
-    font: 15px/40px 'Gotham-Medium', sans-serif;
+    font: 12px/40px 'Gotham-Medium', sans-serif;
     text-transform: uppercase;
     text-shadow: 0 1px 0 #a06102;
     -webkit-border-radius: 5px;
@@ -503,7 +506,7 @@ select:focus {
   position: relative;
   background-color: #1AA6E0;
   display: block;
-  font-size: 48px;
+  font-size: 36px;
   font-family: 'Armata', sans-serif;
   text-align: center;
   padding-top: 100px; }
@@ -513,12 +516,42 @@ select:focus {
 }
 
 #calendarpick table td{
-  height: 30px;
+  height: auto;
   border: none;
+  padding: 5px;
 } 
 
+#calendarmonthid table td{
+  height: auto;
+  border: none;
+  padding: 5px;
+}
 
+#calendarmonthid td:hover{
+  background-color: #aaa;
+  color: #FFF;
+}
 
+#calendarmonthid td:hover a{
+  color: #FFF;
+}
+
+.activemonth{
+  background-color: #aaa;
+  color: #FFF;
+}
+
+.activemonth a{
+  color: #FFF;
+}
+
+#result{
+  width:200px;
+}
+
+#controllsdashboard-impressions{
+  font-size: 30px;
+}
 
 
 

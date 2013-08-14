@@ -6,7 +6,9 @@
 
 /* custom checkbox styles */
 .chk-area {
-  margin: 11px 3.9% 0 0;
+  /*margin: 11px 3.9% 0 0;*/
+  margin-top: 9px;
+  margin-right: 28px;
   float: left;
   overflow: hidden;
   height: 19px;

@@ -66,10 +66,10 @@
     }
 
     #Tab audience is diffrent
-    TABS[:audience][:impressions].delete(:online)
-    TABS[:audience][:impressions][:site]           = { input_type: :checkbox, input_checked: true,    show_icon: true }
-    TABS[:audience][:impressions][:placement]      = { input_type: :checkbox, input_checked: true,    show_icon: true }
-    TABS[:audience][:impressions][:optimization]   = { input_type: :select, input_options: ['Optimization Target', 'Optimization Target', 'Optimization Target' ] }
-    TABS[:audience][:impressions][:browser]        = { input_type: :select, input_options: ['Browser Atttibute', 'Browser Atttibute', 'Browser Atttibute' ] }
+    #TABS[:audience][:impressions].delete(:online)
+    #TABS[:audience][:impressions][:site]           = { input_type: :checkbox, input_checked: true,    show_icon: true }
+    #TABS[:audience][:impressions][:placement]      = { input_type: :checkbox, input_checked: true,    show_icon: true }
+    #TABS[:audience][:impressions][:optimization]   = { input_type: :select, input_options: ['Optimization Target', 'Optimization Target', 'Optimization Target' ] }
+    #TABS[:audience][:impressions][:browser]        = { input_type: :select, input_options: ['Browser Atttibute', 'Browser Atttibute', 'Browser Atttibute' ] }
 
 

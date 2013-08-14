@@ -639,12 +639,12 @@ function CP_getCalendar() {
 	// ----------------------
 	if (this.displayType=="month") {
 		// If POPUP, write entire HTML document
-		result += '<TABLE WIDTH=120 BORDER=0 CELLSPACING=1 CELLPADDING=0 ALIGN=CENTER>\n';
+		result += '<TABLE ID=calendarmonthid WIDTH=120 BORDER=0 CELLSPACING=1 CELLPADDING=0 ALIGN=CENTER>\n';
 		for (var i=0; i<4; i++) {
 			result += '<TR>';
 			for (var j=0; j<3; j++) {
 				var monthindex = ((i*3)+j);
-				result += '<TD WIDTH=33% ALIGN=CENTER><A CLASS="'+this.cssPrefix+'cpText" HREF="javascript:'+windowref+this.returnMonthFunction+'('+year+','+(monthindex+1)+');'+windowref+'CP_hideCalendar(\''+this.index+'\');" CLASS="'+date_class+'">'+this.monthAbbreviations[monthindex]+'</A></TD>';
+				result += '<TD WIDTH=33% id=monthselect'+year+(monthindex+1)+' ALIGN=CENTER><A CLASS="'+this.cssPrefix+'cpText" HREF="javascript:'+windowref+this.returnMonthFunction+'('+year+','+(monthindex+1)+');'+windowref+'CP_hideCalendar(\''+this.index+'\');" CLASS="'+date_class+'">'+this.monthAbbreviations[monthindex]+'</A></TD>';
 				}
 			result += '</TR>';
 			}
