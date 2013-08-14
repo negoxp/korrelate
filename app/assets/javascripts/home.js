@@ -22,7 +22,6 @@ $(document).ready(function() {
 	subtab = target.last().attr('data_id');
 
 	var arrayfields = $('#form-' + tab + '-' + subtab).serializeArray();
-	console.log(arrayfields);
 	$('#controlls' + tab + '-' + subtab).empty();
 
 	jQuery.each(arrayfields, function(i, field){
@@ -32,5 +31,16 @@ $(document).ready(function() {
 
   });
 
+	var cal5 = new CalendarPopup('calendarpick');
+	cal5.setDisplayType("month");
+	cal5.setReturnMonthFunction("monthReturn");
+	cal5.showYearNavigation();
+	cal5.showCalendar('calendarpick');
+
 
 });
+
+function monthReturn(y,m) {
+    	 //$("#month").value=m+"/"+y;
+    	 alert(m);
+     }

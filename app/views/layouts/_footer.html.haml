@@ -14,6 +14,9 @@
         .cols
           .col
             %h3 start month
+            #calendarpick
+            %input#month{:name => "month", :type => "text"}
+
             .years
               .holder
                 %a.prev{:href => "#"} prev

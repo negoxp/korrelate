@@ -20,3 +20,7 @@
 //= require jquery.fancybox
 //= require scripts
 //= require home
+//= require CalendarPopup
+//= require AnchorPosition
+//= require date
+//= require PopupWindow
