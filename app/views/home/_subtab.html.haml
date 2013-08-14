@@ -4,7 +4,7 @@
       -#Build subtab/header
       - subtabs.each do |subtab, fields|
         %li
-          %a{:href => "#tab-#{tab_name}-#{subtab}", data_id: subtab }= subtab.to_s.titleize
+          %a{:href => "#tab-#{tab_name}-#{subtab}", data_id: subtab, :class => subtab }= subtab.to_s.titleize
 
     -#Build subtab/content
     - subtabs.each do |subtab, fields|

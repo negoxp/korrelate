@@ -7,7 +7,7 @@ feature 'Content', %q{
 	}do
 
 	scenario 'Check controlls on Impressions', :js=>true do
-		visit '/'
+		visit "/"
 	  	click_link 'Dashboard'
 	  	sleep 3
 	  	within('#tab-dashboard') do
@@ -22,11 +22,12 @@ feature 'Content', %q{
 	end
 
 	scenario 'Check controlls on Actions', :js=>true do
-		visit '/'
+		visit "/"
 	  	click_link 'Dashboard'
 	  	sleep 3
 	  	within('#tab-dashboard') do
-	  		click_link 'Actions'
+	  		#click_link 'Actions'
+	  		find('.actions').click
 	  		within('#tab-dashboard-actions') do
 	  			find '[value=Advertiser]'
 	  			find '[value=Pixel]'
@@ -35,11 +36,12 @@ feature 'Content', %q{
 	end
 
 	scenario 'Check controlls on View-Actions', :js=>true do
-		visit '/'
+		visit "/"
 	  	click_link 'Dashboard'
 	  	sleep 3
 	  	within('#tab-dashboard') do
-	  		click_link 'View-Actions'
+	  		#click_link 'view actions'
+	  		find('.view_actions').click
 	  		within('#tab-dashboard-view_actions') do
 	  			find '[value=Advertiser]'
 	  		end
@@ -47,7 +49,7 @@ feature 'Content', %q{
 	end
 
 	scenario 'Check controlls on Engagements', :js=>true do
-		visit '/'
+		visit "/"
 	  	click_link 'Dashboard'
 	  	sleep 3
 	  	within('#tab-dashboard') do
@@ -62,7 +64,7 @@ feature 'Content', %q{
 	end
 
 	scenario 'Check controlls on Clicks', :js=>true do
-		visit '/'
+		visit "/"
 	  	click_link 'Dashboard'
 	  	sleep 3
 	  	within('#tab-dashboard') do
