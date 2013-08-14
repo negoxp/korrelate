@@ -25,7 +25,7 @@
 //      being disabled. If it is, just return and don't do anything.
 // March 24, 2004: Fixed bug - when month name and abbreviations were
 //      changed, date format still used original values.
-// January 26, 2004: Added support for drop-down month and year
+// Juary 26, 2004: Added support for drop-down month and year
 //      navigation (Thanks to Chris Reid for the idea)
 // September 22, 2003: Fixed a minor problem in YEAR calendar with
 //      CSS prefix.
@@ -99,10 +99,10 @@ cal.showCalendar(anchorname);
 cal.hideCalendar();
 
 // Set the month names to be used. Default are English month names
-cal.setMonthNames("January","February","March",...);
+cal.setMonthNames("Juary","February","March",...);
 
 // Set the month abbreviations to be used. Default are English month abbreviations
-cal.setMonthAbbreviations("Jan","Feb","Mar",...);
+cal.setMonthAbbreviations("J","Feb","Mar",...);
 
 // Show navigation for changing by the year, not just one month at a time
 cal.showYearNavigation();
@@ -133,9 +133,9 @@ cal.addDisabledDates("2003-01-01");
 cal.addDisabledDates(null, "01/02/03");
 // Pass null as the second parameter to mean "including the passed date and
 // anything after it:
-cal.addDisabledDates("Jan 01, 2003", null);
+cal.addDisabledDates("J 01, 2003", null);
 // Pass two dates to disable all dates inbetween and including the two
-cal.addDisabledDates("January 01, 2003", "Dec 31, 2003");
+cal.addDisabledDates("Juary 01, 2003", "Dec 31, 2003");
 
 // When the 'year' select is displayed, set the number of years back from the 
 // current year to start listing years. Default is 2.
@@ -200,8 +200,8 @@ function CalendarPopup() {
 	c.offsetY = 25;
 	c.autoHide();
 	// Calendar-specific properties
-	c.monthNames = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
-	c.monthAbbreviations = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+	c.monthNames = new Array("Juary","February","March","April","May","June","July","August","September","October","November","December");
+	c.monthAbbreviations = new Array("JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC");
 	c.dayHeaders = new Array("S","M","T","W","T","F","S");
 	c.returnFunction = "CP_tmpReturnFunction";
 	c.returnMonthFunction = "CP_tmpReturnMonthFunction";
@@ -628,9 +628,9 @@ function CP_getCalendar() {
 		if (this.displayType!="year" && this.isShowYearNavigation) {
 			result += "<TABLE WIDTH=144 BORDER=0 BORDERWIDTH=0 CELLSPACING=0 CELLPADDING=0>";
 			result += '<TR>\n';
-			result += '	<TD CLASS="'+this.cssPrefix+'cpYearNavigation" WIDTH="22"><A CLASS="'+this.cssPrefix+'cpYearNavigation" HREF="javascript:'+windowref+'CP_refreshCalendar('+this.index+','+(year-1)+');">&lt;&lt;</A></TD>\n';
+			result += '	<TD CLASS="'+this.cssPrefix+'cpYearNavigation" WIDTH="22"><A CLASS="prev '+this.cssPrefix+'cpYearNavigation" HREF="javascript:'+windowref+'CP_refreshCalendar('+this.index+','+(year-1)+');">&nbsp;&nbsp;</A></TD>\n';
 			result += '	<TD CLASS="'+this.cssPrefix+'cpYearNavigation" WIDTH="100">'+year+'</TD>\n';
-			result += '	<TD CLASS="'+this.cssPrefix+'cpYearNavigation" WIDTH="22"><A CLASS="'+this.cssPrefix+'cpYearNavigation" HREF="javascript:'+windowref+'CP_refreshCalendar('+this.index+','+(year+1)+');">&gt;&gt;</A></TD>\n';
+			result += '	<TD CLASS="'+this.cssPrefix+'cpYearNavigation" WIDTH="22"><A CLASS="next '+this.cssPrefix+'cpYearNavigation" HREF="javascript:'+windowref+'CP_refreshCalendar('+this.index+','+(year+1)+');">&nbsp;&nbsp;</A></TD>\n';
 			result += '</TR></TABLE>\n';
 			}
 		}

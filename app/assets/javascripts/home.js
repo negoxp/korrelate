@@ -43,4 +43,5 @@ $(document).ready(function() {
 function monthReturn(y,m) {
     	 //$("#month").value=m+"/"+y;
     	 alert(m);
+    	 $(this).css("background-color", "#0000FF");
      }

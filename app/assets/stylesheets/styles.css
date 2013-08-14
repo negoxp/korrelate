@@ -380,6 +380,20 @@ select:focus {
       left: auto;
       right: 23px;
       background-position: 0 -11px; }
+      .prev {
+        background: url(/assets/arrows.png) no-repeat;
+        width: 8px;
+        height: 11px;
+        font-size: 12px;
+      }
+      .next {
+        background: url(/assets/arrows.png) no-repeat;
+        width: 8px;
+        height: 11px;
+        font-size: 12px;
+        background-position: 0 -11px;
+      }
+      
     .choice-form .col .years span {
       padding-right: 15px; }
     .choice-form .col .years ul {
@@ -493,3 +507,18 @@ select:focus {
   font-family: 'Armata', sans-serif;
   text-align: center;
   padding-top: 100px; }
+
+#calendarpick table {
+  border: none;
+}
+
+#calendarpick table td{
+  height: 30px;
+  border: none;
+} 
+
+
+
+
+
+
