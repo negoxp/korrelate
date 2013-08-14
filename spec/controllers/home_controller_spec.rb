@@ -11,5 +11,16 @@ describe HomeController do
 	end
 
 
+  describe "Comming Ajax respond" do
+    it "should be successful" do
+      post :comming, :params => {:tab => 'title', :subtab => 'title'}
+      #response.should be_success
+    end
+
+    #response.should render_template(:js => "generate")
+  end
+
+
+
 
 end
