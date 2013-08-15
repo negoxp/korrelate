@@ -1,0 +1,30 @@
+<div id="tabs">
+  <ul class="tabset">
+    <% TABS.each do |tab_name, subtabs| %>
+      <%= render 'custom_li', tab_name: tab_name, subtabs: subtabs %>
+    <% end %>
+  </ul>
+  <% TABS.each do |tab_name, subtabs| %>
+   <%= render 'subtab', tab_name: tab_name, subtabs: subtabs %>
+  <% end %>
+</div>  
+
+<div class="popups">
+  <div id="box" class="choice-form">
+    <form action="#">
+      <fieldset>
+        <div class="heading">
+          <div class="customForm-class-purchaseEvent rad-area rad-checked"></div>
+          <input checked="checked" class="purchaseEvent customForm-hidden" id="lbl1" name="purchaseEvent" type="radio" value="Purchase">
+          <label for="lbl1" class="customForm-label-active">Purchase Month</label>
+
+          <div class="customForm-class-purchaseEvent rad-area rad-unchecked"></div>
+          <input class="purchaseEvent customForm-hidden" id="lbl2" name="purchaseEvent" type="radio" value="Event">
+          <label for="lbl2">Event Month</label>
+
+        </div>
+        <%= render :partial => 'calendar' %>
+      </fieldset>  
+    </form>  
+  </div>
+</div>  

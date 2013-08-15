@@ -1,0 +1,5 @@
+<select name="<%= defined?(name) ? name : '' %>" class="<%= defined?(clas) ? clas : '' %>">
+	<% input_options.each do |option_name| %>
+		<option><%= option_name %></option>
+	<% end %>
+</select>    

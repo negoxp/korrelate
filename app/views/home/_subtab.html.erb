@@ -1,0 +1,18 @@
+<div id="<%= "tab-#{tab_name}" %>">
+  <div class="child-tabs">
+    <ul class="tabset">
+      <% subtabs.each do |subtab, fields| %>
+        <li> 
+          <a href="<%= "#tab-#{tab_name}-#{subtab}" %>" data_id="<%= subtab %>" class="<%= subtab %>">
+            <%= subtab.to_s.titleize %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+    <% subtabs.each do |subtab, fields| %>
+        <div id='<%= "tab-#{tab_name}-#{subtab}" %>'>
+          <%= render 'subtab_content', fields: fields, subtab: subtab, tab_name: tab_name %>
+        </div>
+    <% end %>
+  </div>
+</div>

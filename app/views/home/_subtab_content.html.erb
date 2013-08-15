@@ -1,0 +1,31 @@
+<div class="holder">
+	<div class="report-form">
+		<form action="home/updatecontent" method="get" controller="/home" remote="true" id="<%= "form-#{tab_name}-#{subtab}" %>" >
+		<fieldset>
+			<% fields.each_with_index do |(name, field), index| %>
+				<% if field[:input_type] == :checkbox %>
+					<label class="first" for="<%= "#{tab_name}-#{subtab}-#{index}" %>"><%= name.to_s.humanize %></label>
+					<input id="<%= "#{tab_name}-#{subtab}-#{index}" %>" value="<%= "#{name.to_s.humanize}" %>" checked="<%=field[:input_checked]%>" name="<%= "fieldsarray#{tab_name}-#{subtab}[]" %>" type="checkbox" />
+				<% end %>
+				<% if field[:input_type] == :select %>
+					<%= render 'shared/select_field', name: name, input_options: field[:input_options], clas: 'attribute' %>
+				<% end %>
+				<% if field[:show_icon] %>
+					<%= image_tag 'ico-01.png',alt: "image", height: "16", width:  "17" %>
+				<% end %>
+			<% end %>
+			<a class="fancybox btn" href="#box" style="margin-right:5px;">Adjust Windows</a>
+			<a class="btn submit" href="#">Update Report</a>
+
+		</fieldset>
+		</form>
+	</div>
+</div>
+
+<div class="coming-soon">
+	Your <span id="<%= "data#{tab_name}-#{subtab}" %>"></span> Data.  Coming Soon...
+	<br/>
+	<br/>
+	<br/>
+	[<span id="<%= "controlls#{tab_name}-#{subtab}" %>"></span>]
+</div>
