@@ -70,7 +70,8 @@ function updatetags(){
 			yearSelected : yearselected,
 			monthSelected : monthselect,
 			purchaseEvent : purchaseEvent,
-			attribution   : attribution
+			attribution   : attribution,
+			attribution   : report
 		},
 		dataType: 'html',
 		success: function (response) {
