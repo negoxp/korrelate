@@ -644,7 +644,7 @@ function CP_getCalendar() {
 			result += '<TR>';
 			for (var j=0; j<3; j++) {
 				var monthindex = ((i*3)+j);
-				result += '<TD WIDTH=33% id=monthselect'+year+(monthindex+1)+' ALIGN=CENTER><A CLASS="'+this.cssPrefix+'cpText" HREF="javascript:'+windowref+this.returnMonthFunction+'('+year+','+(monthindex+1)+');'+windowref+'CP_hideCalendar(\''+this.index+'\');" CLASS="'+date_class+'">'+this.monthAbbreviations[monthindex]+'</A></TD>';
+				result += '<TD WIDTH=33% id=monthselect'+year+(monthindex+1)+' ALIGN=CENTER><A CLASS="'+this.cssPrefix+'cpText" onClick="'+windowref+this.returnMonthFunction+'('+year+','+(monthindex+1)+');'+windowref+'CP_hideCalendar(\''+this.index+'\'); return false;" CLASS="'+date_class+'">'+this.monthAbbreviations[monthindex]+'</A></TD>';
 				}
 			result += '</TR>';
 			}
