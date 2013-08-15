@@ -71,7 +71,7 @@ function updatetags(){
 	parameters += "report="+report+"&";
 	$.ajax({
 		type: 'get',
-		url: '/home/calculateadjustment' + parameters,
+		url: '/home/calculate_adjustment' + parameters,
 		dataType: 'html',
 		success: function (response) {
 			$('#result').html(response)

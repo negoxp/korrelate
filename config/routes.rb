@@ -1,7 +1,12 @@
 Korrelate::Application.routes.draw do
-  get "home/index"
-  get "home/comming"
-  get "home/calculateadjustment"
+
+   resources :home do
+       collection do
+         get 'index'
+         get 'comming'
+         get 'calculate_adjustment'
+        end 
+   end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -8,7 +8,7 @@ class CalculateAdjustment
       		instance_variable_set("@#{k}", v) unless v.nil?
     	} if args.is_a? Hash
 
-		@date = Date.new(@year, @month)
+		@date = Date.new(@year.to_i, @month.to_i)
 		@attribution=@attribution.to_i
 		@report=@report.to_i
 	end	
