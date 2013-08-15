@@ -30,7 +30,7 @@ $(document).ready(function() {
 	var arrayfields = $('#form-' + tab + '-' + subtab).serializeArray();
 	$('#controlls' + tab + '-' + subtab).empty();
 
-	jQuery.each(arrayfields, function(i, field){
+	$.each(arrayfields, function(i, field){
       $('#controlls' + tab + '-' + subtab).append(field.value + ", ");
     });
 	$('#controlls' + tab + '-' + subtab).append(purchaseEvent + ", ");
@@ -63,15 +63,15 @@ $(document).ready(function() {
 });
 
 function updatetags(){
-	var parameters = "?";
-	parameters += "yearSelected="+yearselected+"&";
-	parameters += "monthSelected="+monthselect+"&";
-	parameters += "purchaseEvent="+purchaseEvent+"&";
-	parameters += "attribution="+attribution+"&";
-	parameters += "report="+report+"&";
 	$.ajax({
 		type: 'get',
-		url: '/home/calculate_adjustment' + parameters,
+		url: '/home/calculate_adjustment',
+		data: { 
+			yearSelected : yearselected,
+			monthSelected : monthselect,
+			purchaseEvent : purchaseEvent,
+			attribution   : attribution
+		},
 		dataType: 'html',
 		success: function (response) {
 			$('#result').html(response)

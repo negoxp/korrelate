@@ -16,7 +16,8 @@ $(function() {
   }
   if ($(".fancybox").exists()) {
     return $(".fancybox").fancybox({
-      padding: 0
+      padding: 0,
+      width: 740
     });
   }
 });
