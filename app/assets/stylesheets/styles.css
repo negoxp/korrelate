@@ -530,15 +530,18 @@ select:focus {
 #calendarmonthid td:hover{
   background-color: #aaa;
   color: #FFF;
+  cursor: pointer;
 }
 
 #calendarmonthid td:hover a{
   color: #FFF;
+  cursor: pointer;
 }
 
 .activemonth{
-  background-color: #aaa;
+  background-color: #fb9f37;
   color: #FFF;
+  
 }
 
 .activemonth a{
