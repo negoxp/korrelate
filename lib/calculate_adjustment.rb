@@ -1,3 +1,5 @@
+require "active_support/all"
+
 class CalculateAdjustment
 	attr_accessor :year, :month, :attribution, :report,  :type, :purchase, :impressions, :date
 
@@ -6,15 +8,13 @@ class CalculateAdjustment
       		instance_variable_set("@#{k}", v) unless v.nil?
     	} if args.is_a? Hash
 
-		@date = Time.new  @year, @month
+		@date = Date.new(@year, @month)
 		@attribution=@attribution.to_i
 		@report=@report.to_i
-		@purchase=self.set_purchase
-		@impressions=self.set_impressions
 	end	
 
 
-	def set_purchase
+	def set_purchases
 		self.purchase= self.type == "Purchase" ? "#{display_date(self.date)} through #{display_date(self.date + (self.report - 1).months)}" : "#{display_date(self.date)} through #{display_date(self.date + (self.attribution - 1).months)}" 
 	end	
 
@@ -27,6 +27,8 @@ class CalculateAdjustment
 	end	
 
 	def get_data
+		self.set_purchases
+		self.set_impressions
 		[self.purchase,self.impressions]
 	end	
 
