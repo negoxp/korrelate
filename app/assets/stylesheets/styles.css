@@ -326,7 +326,7 @@ select:focus {
   -moz-box-shadow: 0 0 3px #e8e8e8;
   box-shadow: 0 0 3px #e8e8e8;
   padding: 17px 13px 18px;
-  width: 694px; }
+  width: 710px; }
   .choice-form .heading {
     overflow: hidden;
     background: url(/assets/sep-02.png) repeat-x 0 100%;
@@ -546,7 +546,7 @@ select:focus {
 }
 
 #result{
-  width:200px;
+  width:212px;
 }
 
 #controllsdashboard-impressions{

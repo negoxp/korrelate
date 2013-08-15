@@ -10,7 +10,7 @@ class HomeController < ApplicationController
 
   end
 
-  def calculateadjustment
+  def calculate_adjustment
   	require 'calculate_adjustment'
     calc=CalculateAdjustment.new :type=> params[:purchaseEvent] , :year => params[:yearSelected], :month => params[:monthSelected], :attribution => params[:attribution] , :report => params[:report]
     @purchases, @impressions =calc.get_data
