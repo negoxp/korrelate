@@ -99,7 +99,17 @@ select:focus {
 
 /*main*/
 #main {
-  padding-bottom: 113px; }
+  padding-bottom: 113px; 
+  min-width: 1000px;
+}
+
+.name-form{
+  min-width: 1000px;
+}
+
+.select-area{
+  width: 150px !important;
+}
 
 /*tabs*/
 #tabs .tabset {
