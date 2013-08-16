@@ -15,7 +15,7 @@ class CalculateAdjustment
 
 
 	def set_purchases
-		self.purchase= self.type == "Purchase" ? "#{display_date(self.date)} through #{display_date(self.date + (self.report - 1).months)} --self.report" : "#{display_date(self.date)} through #{display_date(self.date + (self.attribution - 1).months)}" 
+		self.purchase= self.type == "Purchase" ? "#{display_date(self.date)} through #{display_date(self.date + (self.report - 1).months)}" : "#{display_date(self.date)} through #{display_date(self.date + (self.attribution - 1).months)}" 
 	end	
 
 	def set_impressions
