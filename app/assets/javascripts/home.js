@@ -22,21 +22,7 @@ $(document).ready(function() {
 	};
 
   $('.submit').click(function() {
-    var subtab, tab, target;
-	target = $('.ui-tabs-active:visible a');
-	tab = target.first().attr('data_id');
-	subtab = target.last().attr('data_id');
-
-	var arrayfields = $('#form-' + tab + '-' + subtab).serializeArray();
-	$('#controlls' + tab + '-' + subtab).empty();
-
-	$.each(arrayfields, function(i, field){
-      $('#controlls' + tab + '-' + subtab).append(field.value + ", ");
-    });
-	$('#controlls' + tab + '-' + subtab).append(purchaseEvent + ", ");
-	$('#controlls' + tab + '-' + subtab).append(report + ", ");
-	$('#controlls' + tab + '-' + subtab).append(attribution + ", ");
-	$('#controlls' + tab + '-' + subtab).append(yearselected + "/" +monthselect);
+    prevtosubmit();
 	return false;
 
   });
@@ -71,7 +57,7 @@ function updatetags(){
 			monthSelected : monthselect,
 			purchaseEvent : purchaseEvent,
 			attribution   : attribution,
-			attribution   : report
+			report   : report
 		},
 		dataType: 'html',
 		success: function (response) {
@@ -79,6 +65,26 @@ function updatetags(){
 		}
 	});
 	$('#focusonpurchase').text(purchaseEvent + " Month");
+}
+
+function prevtosubmit(){
+
+	var subtab, tab, target;
+	target = $('.ui-tabs-active:visible a');
+	tab = target.first().attr('data_id');
+	subtab = target.last().attr('data_id');
+
+	var arrayfields = $('#form-' + tab + '-' + subtab).serializeArray();
+	$('#controlls' + tab + '-' + subtab).empty();
+
+	$.each(arrayfields, function(i, field){
+      $('#controlls' + tab + '-' + subtab).append(field.value + ", ");
+    });
+	$('#controlls' + tab + '-' + subtab).append(purchaseEvent + ", ");
+	$('#controlls' + tab + '-' + subtab).append(report + ", ");
+	$('#controlls' + tab + '-' + subtab).append(attribution + ", ");
+	$('#controlls' + tab + '-' + subtab).append(yearselected + "/" +monthselect);
+
 }
 
 

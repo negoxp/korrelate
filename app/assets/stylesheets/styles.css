@@ -45,7 +45,7 @@ a {
   color: #000;
   text-decoration: none; }
   a:hover {
-    text-decoration: underline; }
+    /*text-decoration: underline; */ }
 
 a:focus,
 input:focus,
@@ -68,10 +68,10 @@ select:focus {
     display: block; }
   #header .col {
     float: right;
-    width: 33.2%; }
+    width: 23.2%; }
     #header .col:first-child {
       float: left;
-      width: 54.16%; }
+      width: 70%; }
     #header .col .select {
       position: relative; }
   #header .name {
@@ -95,7 +95,7 @@ select:focus {
       width: 37.5%; }
   #header .logo.verity {
     margin: -9px 0 0;
-    width: 22%; }
+    width: 47px; }
 
 /*main*/
 #main {

@@ -391,6 +391,8 @@
 
 		// Start closing animation if is open; remove immediately if opening/closing
 		close: function (event) {
+			//JFC i add this line to updating
+			prevtosubmit();
 			F.cancel();
 
 			if (false === F.trigger('beforeClose')) {
